@@ -1,4 +1,4 @@
-Iquidus Explorer - 1.7.4
+Iquidus Explorer - 1.7.4 - ferrite edition
 ================
 
 An open source block explorer written in node.js.
@@ -12,9 +12,9 @@ An open source block explorer written in node.js.
 
 ### Requires
 
-*  node.js >= 8.17.0 (12.14.0 is advised for updated dependencies)
+*  node.js >= 8.17.0 (12.14.0 is advised for updated dependencies)  - for npm and node
 *  mongodb 4.2.x
-*  *coind
+*  ferrited
 
 ### Create database
 
@@ -36,15 +36,13 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/iquidus/explorer explorer
+    git clone https://github.com/koh-gt/ferrite-iquidus-explorer explorer
 
 ### Install node modules
 
     cd explorer && npm install --production
 
 ### Configure
-
-    cp ./settings.json.template ./settings.json
 
 *Make required changes in settings.json*
 
@@ -99,6 +97,15 @@ sync.js (located in scripts/) is used for updating the local databases. This scr
 Iquidus Explorer is intended to be generic, so it can be used with any wallet following the usual standards. The wallet must be running with atleast the following flags
 
     -daemon -txindex
+    
+    
+    daemon=1
+    txindex=1
+    server=1
+    listen=1
+    rpcallowip=127.0.0.1
+    rpcport=9573
+    port=9574
     
 ### Security
 
