@@ -1,0 +1,1 @@
+node scripts/sync.js index update
