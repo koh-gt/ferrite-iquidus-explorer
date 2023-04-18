@@ -14,7 +14,7 @@ An open source block explorer written in node.js.
 
 *  node.js >= 8.17.0 (12.14.0 is advised for updated dependencies)  - for npm and node
 *  mongodb 4.2.x
-*  ferrited
+*  ferrited orfer
 
 ### Create database
 
@@ -119,6 +119,12 @@ If you receive this message when launching the sync script either a) a sync is c
 
     rm tmp/index.pid
     rm tmp/db_index.pid
+    
+**updater does not work**
+Use auto_update.ps1 powershell script to auto update the explorer every 30 seconds. 
+It is necessary to close the updater script if you plan to restart the explorer to update settings parameters.
+In the case that the auto_update.ps1 script fails to operate, remove .pid files from ```tmp``` folder.
+
 
 **exceeding stack size**
 
