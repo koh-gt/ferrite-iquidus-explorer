@@ -13,8 +13,10 @@ An open source block explorer written in node.js.
 ### Requires
 
 *  node.js >= 8.17.0 (12.14.0 is advised for updated dependencies)  - for npm and node
-*  mongodb 4.2.x
-*  ferrited orfer
+*  mongodb 4.2.x (Newer versions work fine)
+*  ferrite-qt or ferrited v3.0.0+
+
+Tested to work on Windows 10 20H1, 20H2, 21H1, Ubuntu 22.04 LTS.
 
 ### Create database
 
