@@ -54,6 +54,16 @@ Create user with read/write access:
 
 *Note: mongod must be running to start the explorer*
 
+### HTTPS setup
+Add in the following files into ./cert
+server.ca
+server.crt
+server.key
+
+Default https port is 3443 -> https://127.0.0.1:3443
+
+# Other notes
+
 As of version 1.4.0 the explorer defaults to cluster mode, forking an instance of its process to each cpu core. This results in increased performance and stability. Load balancing gets automatically taken care of and any instances that for some reason die, will be restarted automatically. For testing/development (or if you just wish to) a single instance can be launched with
 
     node --stack-size=10000 bin/instance
