@@ -13,7 +13,19 @@ var express = require('express')
   , locale = require('./lib/locale')
   , request = require('request');
 
+var forceSSL = require('express-force-ssl');
+var https = require('https');
+var fs = require('fs');
+var ssl_options = {
+  key: fs.readFileSync('./cert/server.key'),
+  cert: fs.readFileSync('./cert/server.crt'),
+  ca: fs.readFileSync('./cert/server.ca')
+};
+
 var app = express();
+
+var secureServer = https.createServer(ssl_options, app);
+
 // enable CORS
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -336,5 +348,7 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+secureServer.listen(3443);
 
 module.exports = app;
